@@ -28,10 +28,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/pi-temp-display/classes/models/Readings
     <section class="col-lg-12">
         <?php
             $readingObject = new Readings();
-            $reading = $readingObject->getReadings();
-
-            // echo "<pre>";
-            // print_r($reading);
+            $reading = $readingObject->getReadings(24);
         ?>
     </section>
     <script>
@@ -61,15 +58,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/pi-temp-display/classes/models/Readings
         };
 
         window.onload = function() {
-//            var ctx1 = document.getElementById("chart1").getContext("2d");
-//            window.myLine = new Chart(ctx1).Line(lineChartData, {
-//                showScale: false,
-//                pointDot : true,
-//                responsive: true
-//            });
-
-            var ctx2 = document.getElementById("chart2").getContext("2d");
-            window.myLine = new Chart(ctx2).Line(lineChartData, {
+            var ctx = document.getElementById("chart2").getContext("2d");
+            window.myLine = new Chart(ctx).Line(lineChartData, {
                 responsive: true
             });
         };
