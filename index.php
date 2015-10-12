@@ -28,7 +28,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/pi-temp-display/classes/models/Readings
     <section class="col-lg-12">
         <?php
             $readingObject = new Readings();
-            $reading = $readingObject->getReadings(24);
+            $reading = $readingObject->getReadings();
         ?>
     </section>
     <script>
