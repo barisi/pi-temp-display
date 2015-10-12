@@ -21,8 +21,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/pi-temp-display/classes/models/Readings
 <body class="container">
     <section class="col-lg-12">
         <h2>Temperature (Last 24 hours)</h2>
-        <div id="canvas-holder2">
-            <canvas id="chart2" width="450" height="200"></canvas>
+        <div id="canvas-holder">
+            <canvas id="temperature-chart" width="450" height="200"></canvas>
         </div>
     </section>
     <section class="col-lg-12">
@@ -58,7 +58,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/pi-temp-display/classes/models/Readings
         };
 
         window.onload = function() {
-            var ctx = document.getElementById("chart2").getContext("2d");
+            var ctx = document.getElementById("temperature-chart").getContext("2d");
             window.myLine = new Chart(ctx).Line(lineChartData, {
                 responsive: true
             });

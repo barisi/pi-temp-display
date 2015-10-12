@@ -29,10 +29,10 @@ class Readings extends Connection
     public function getReadings($limit)
     {
         //Retrieve reading from the database using the readingID in the parameter and assign to the $reading variable
-        $statement = parent::getDBConnection()->prepare("(SELECT * FROM temperature_readings ORDER BY id DESC LIMIT ?) ORDER BY id ASC");
-        $statement->execute(array($limit);
+        $statement = parent::getDBConnection()->prepare("(SELECT * FROM temperature_readings ORDER BY id DESC LIMIT 24) ORDER BY id ASC");
+        $statement->execute(array());
         $readings = $statement->fetchAll();
-        //Return the $reading variable
+        //Return the query results
         return $readings;
     }
 }
