@@ -1,8 +1,8 @@
 import MySQLdb
-import random
+import subprocess
 
 # Simulate a temperature reading
-temperature_reading = random.uniform(19.0, 30.0)
+temperature_reading = subprocess.check_output("sudo temperv14 -c", shell=True)
 
 # Send temperature reading to database
 # First, grab a connection to the database
