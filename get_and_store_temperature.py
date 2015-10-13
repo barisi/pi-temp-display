@@ -2,7 +2,7 @@ import MySQLdb
 import subprocess
 
 # Simulate a temperature reading
-temperature_reading = subprocess.check_output("sudo temperv14 -c", shell=True)
+temperature_reading = subprocess.check_output("sudo temperv14 -c", shell=False)
 
 # Send temperature reading to database
 # First, grab a connection to the database
